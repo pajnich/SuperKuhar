@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFBE6"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="248dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="Izberi svoje sestavine"
+        android:textColor="#FD5523"
+        android:textSize="30sp"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/main_ingredients_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/main_ingredients_search"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:hint="Vnesi sestavino..."
+        android:typeface="monospace"
+        android:textColor="#356859"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284" />
+
+    <com.example.matic.superkuhar.IngredientsList
+        android:layout_width="368dp"
+        android:layout_height="285dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_ingredients_search"
+        android:id="@+id/main_ingredients_list"
+        android:orientation="vertical" />
+
+</android.support.constraint.ConstraintLayout>
