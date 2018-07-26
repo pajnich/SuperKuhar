@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
     private AutoCompleteTextView ingredientsSearch;
     private IngredientsList ingredientsList;
     private ImageView arrowGoToRecipes;
+    private int numberOfRecipesFound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class MainActivity extends Activity {
                 String ingredientName = textView.getText().toString();
                 IngredientView ingredient = new IngredientView(MainActivity.this, ingredientName);
                 ingredientsList.addIngredient(ingredient);
-                if (RecipeApi.searchForRecipes(ingredientsList.getIngredientsNames()) > 0) {
+                if ((numberOfRecipesFound = RecipeApi.searchForRecipes(ingredientsList.getIngredientsNames())) > 0) {
                     arrowGoToRecipes.setVisibility(View.VISIBLE);
                 }
                 ingredientsSearch.setText("");
@@ -68,6 +69,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intentGoToRecipes = new Intent(MainActivity.this, RecipesActivity.class);
+                intentGoToRecipes.putExtra("numberOfRecipesFound", numberOfRecipesFound);
                 startActivity(intentGoToRecipes);
             }
         });

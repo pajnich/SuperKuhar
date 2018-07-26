@@ -5,6 +5,6 @@ import java.util.ArrayList;
 class RecipeApi {
 
     public static int searchForRecipes(ArrayList<String> ingredientsNames) {
-        return 1;
+        return 3;
     }
 }
