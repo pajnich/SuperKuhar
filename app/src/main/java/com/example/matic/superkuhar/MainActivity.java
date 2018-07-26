@@ -1,6 +1,7 @@
 package com.example.matic.superkuhar;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -24,6 +26,7 @@ public class MainActivity extends Activity {
     };
     private AutoCompleteTextView ingredientsSearch;
     private IngredientsList ingredientsList;
+    private ImageView arrowGoToRecipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class MainActivity extends Activity {
     private void getViewReferences() {
         ingredientsSearch = findViewById(R.id.main_ingredients_search);
         ingredientsList = findViewById(R.id.main_ingredients_list);
+        arrowGoToRecipes = findViewById(R.id.main_arrow_go_to_recipes);
     }
 
     private void setViewAdapters() {
@@ -54,7 +58,17 @@ public class MainActivity extends Activity {
                 String ingredientName = textView.getText().toString();
                 IngredientView ingredient = new IngredientView(MainActivity.this, ingredientName);
                 ingredientsList.addIngredient(ingredient);
+                if (RecipeApi.searchForRecipes(ingredientsList.getIngredientsNames()) > 0) {
+                    arrowGoToRecipes.setVisibility(View.VISIBLE);
+                }
                 ingredientsSearch.setText("");
+            }
+        });
+        arrowGoToRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentGoToRecipes = new Intent(MainActivity.this, RecipesActivity.class);
+                startActivity(intentGoToRecipes);
             }
         });
     }

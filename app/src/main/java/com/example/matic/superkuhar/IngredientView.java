@@ -35,4 +35,8 @@ class IngredientView extends TextView{
         setTextColor(Color.parseColor("#356859"));
         setTextSize(24);
     }
+
+    public String getIngredientName() {
+        return getText().toString();
+    }
 }

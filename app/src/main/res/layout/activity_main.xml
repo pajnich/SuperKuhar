@@ -36,9 +36,10 @@
         app:layout_constraintVertical_bias="0.284" />
 
     <ScrollView
-        android:layout_width="368dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="252dp"
         android:layout_height="285dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_ingredients_search">
@@ -49,6 +50,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical" />
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/main_arrow_go_to_recipes"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_arrow_right"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/scrollView2"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
 
 
 </android.support.constraint.ConstraintLayout>

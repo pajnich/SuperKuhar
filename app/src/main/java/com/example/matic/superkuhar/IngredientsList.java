@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+
 class IngredientsList extends LinearLayout{
 
 
@@ -26,5 +28,14 @@ class IngredientsList extends LinearLayout{
 
     public void addIngredient(IngredientView ingredient) {
         addView(ingredient, 0);
+    }
+
+    public ArrayList<String> getIngredientsNames() {
+        ArrayList<String> ingredientsNames = new ArrayList<>();
+        for (int i = 0; i < getChildCount(); i++) {
+            IngredientView ingredientView = (IngredientView) getChildAt(i);
+            ingredientsNames.add(ingredientView.getIngredientName());
+        }
+        return ingredientsNames;
     }
 }
