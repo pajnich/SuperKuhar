@@ -216,6 +216,16 @@
 
         </android.support.constraint.ConstraintLayout>
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:alpha="0.3"
+            android:background="@color/greenDark"
+            app:layout_constraintLeft_toLeftOf="@+id/recipe_details_central_square"
+            app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
+            app:layout_constraintTop_toBottomOf="@id/recipe_details_stats"
+            android:layout_marginTop="20dp"/>
+
     </android.support.constraint.ConstraintLayout>
 
     <TextView
