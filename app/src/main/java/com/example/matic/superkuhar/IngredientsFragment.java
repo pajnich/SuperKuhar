@@ -14,7 +14,7 @@ public class IngredientsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.fragment_directions, container, false);
+                R.layout.fragment_ingredients, container, false);
         return rootView;
     }
 }
