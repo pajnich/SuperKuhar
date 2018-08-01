@@ -1,238 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:gravity="bottom"
-    tools:context=".RecipeDetailsActivity">
+    android:gravity="center"
+    android:textSize="16sp">
+
+    <include
+        android:id="@+id/recipe_anchor_top_half"
+        layout="@layout/anchor_recipe_top_half" />
+
+    <include
+        android:id="@+id/recipe_anchor_top"
+        layout="@layout/anchor_recipe_top" />
+
+    <include
+        android:id="@+id/recipe_anchor_left"
+        layout="@layout/anchor_recipe_left" />
+
+    <TextView
+        android:id="@+id/recipe_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="Spinach Filo Puffs"
+        android:textColor="#FD5523"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipe_anchor_top_half" />
+
+    <View
+        android:id="@+id/recipe_details_central_square"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.2"
+        android:background="@color/greenLight"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/recipe_anchor_left"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_anchor_top"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.7"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="119dp" />
+
+    <View
+        android:id="@+id/recipe_details_separator_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:alpha="0.3"
+        android:background="@color/greenDark"
+        app:layout_constraintLeft_toLeftOf="@+id/recipe_details_central_square"
+        app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
+        app:layout_constraintTop_toBottomOf="@id/recipe_title" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="Serve these little spinach puffs with a main course as your vegetable side and dinner roll in one, or eat a couple for a vegetarian dinner—they're that good."
+        android:textColor="@color/greenDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/recipe_details_central_square"
+        app:layout_constraintLeft_toLeftOf="@id/recipe_details_central_square"
+        app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
+        app:layout_constraintTop_toBottomOf="@id/recipe_details_separator_horizontal" />
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="16sp">
+        android:id="@+id/recipe_details_stats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@id/recipe_details_central_square"
+        app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
+        app:layout_constraintTop_toBottomOf="@id/recipe_details_central_square">
 
-        <include
-            android:id="@+id/recipe_anchor_top_half"
-            layout="@layout/anchor_recipe_top_half" />
+        <LinearLayout
+            android:id="@+id/recipe_details_calories"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintLeft_toLeftOf="@+id/recipe_details_stats">
 
-        <include
-            android:id="@+id/recipe_anchor_top"
-            layout="@layout/anchor_recipe_top" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Kalorije"
+                android:textColor="@color/greenDark" />
 
-        <include
-            android:id="@+id/recipe_anchor_left"
-            layout="@layout/anchor_recipe_left" />
-
-        <TextView
-            android:id="@+id/recipe_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:gravity="center"
-            android:text="Spinach Filo Puffs"
-            android:textColor="#FD5523"
-            android:textSize="48sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recipe_anchor_top_half" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="245"
+                android:textColor="@color/greenDark"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <View
-            android:id="@+id/recipe_details_central_square"
-            android:layout_width="0dp"
+            android:layout_width="1dp"
             android:layout_height="0dp"
-            android:alpha="0.2"
-            android:background="@color/greenLight"
-            android:scaleType="centerCrop"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintLeft_toRightOf="@+id/recipe_anchor_left"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_anchor_top"
-            app:layout_constraintWidth_default="percent"
-            app:layout_constraintWidth_percent="0.7"
-            tools:layout_editor_absoluteX="58dp"
-            tools:layout_editor_absoluteY="119dp" />
-
-        <View
-            android:id="@+id/recipe_details_separator_horizontal"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
             android:alpha="0.3"
             android:background="@color/greenDark"
-            app:layout_constraintLeft_toLeftOf="@+id/recipe_details_central_square"
-            app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
-            app:layout_constraintTop_toBottomOf="@id/recipe_title" />
+            app:layout_constraintBottom_toBottomOf="@id/recipe_details_stats"
+            app:layout_constraintLeft_toRightOf="@id/recipe_details_calories"
+            app:layout_constraintTop_toTopOf="@id/recipe_details_stats" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/recipe_details_carbs"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="16dp"
-            android:gravity="center"
-            android:text="Serve these little spinach puffs with a main course as your vegetable side and dinner roll in one, or eat a couple for a vegetarian dinner—they're that good."
-            android:textColor="@color/greenDark"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/recipe_details_central_square"
-            app:layout_constraintLeft_toLeftOf="@id/recipe_details_central_square"
-            app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
-            app:layout_constraintTop_toBottomOf="@id/recipe_details_separator_horizontal" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintLeft_toRightOf="@id/recipe_details_calories">
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/recipe_details_stats"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="@id/recipe_details_central_square"
-            app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
-            app:layout_constraintTop_toBottomOf="@id/recipe_details_central_square">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="OH"
+                android:textColor="@color/greenDark" />
 
-            <LinearLayout
-                android:id="@+id/recipe_details_calories"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                app:layout_constraintLeft_toLeftOf="@+id/recipe_details_stats">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Kalorije"
-                    android:textColor="@color/greenDark" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="245"
-                    android:textColor="@color/greenDark"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:alpha="0.3"
-                android:background="@color/greenDark"
-                app:layout_constraintBottom_toBottomOf="@id/recipe_details_stats"
-                app:layout_constraintLeft_toRightOf="@id/recipe_details_calories"
-                app:layout_constraintTop_toTopOf="@id/recipe_details_stats" />
-
-            <LinearLayout
-                android:id="@+id/recipe_details_carbs"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                app:layout_constraintLeft_toRightOf="@id/recipe_details_calories">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="OH"
-                    android:textColor="@color/greenDark" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="32g"
-                    android:textColor="@color/greenDark"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:alpha="0.3"
-                android:background="@color/greenDark"
-                app:layout_constraintBottom_toBottomOf="@id/recipe_details_stats"
-                app:layout_constraintLeft_toRightOf="@id/recipe_details_carbs"
-                app:layout_constraintTop_toTopOf="@id/recipe_details_stats" />
-
-            <LinearLayout
-                android:id="@+id/recipe_details_proteins"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                app:layout_constraintLeft_toRightOf="@id/recipe_details_carbs">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Proteini"
-                    android:textColor="@color/greenDark" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="11g"
-                    android:textColor="@color/greenDark"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:alpha="0.3"
-                android:background="@color/greenDark"
-                app:layout_constraintBottom_toBottomOf="@id/recipe_details_stats"
-                app:layout_constraintLeft_toRightOf="@id/recipe_details_proteins"
-                app:layout_constraintTop_toTopOf="@id/recipe_details_stats" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="10dp"
-                app:layout_constraintLeft_toRightOf="@id/recipe_details_proteins">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="Maščobe"
-                    android:textColor="@color/greenDark" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="15g"
-                    android:textColor="@color/greenDark"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="32g"
+                android:textColor="@color/greenDark"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <View
-            android:layout_width="0dp"
-            android:layout_height="2dp"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
             android:alpha="0.3"
             android:background="@color/greenDark"
-            app:layout_constraintLeft_toLeftOf="@+id/recipe_details_central_square"
-            app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
-            app:layout_constraintTop_toBottomOf="@id/recipe_details_stats"
-            android:layout_marginTop="20dp"/>
+            app:layout_constraintBottom_toBottomOf="@id/recipe_details_stats"
+            app:layout_constraintLeft_toRightOf="@id/recipe_details_carbs"
+            app:layout_constraintTop_toTopOf="@id/recipe_details_stats" />
+
+        <LinearLayout
+            android:id="@+id/recipe_details_proteins"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintLeft_toRightOf="@id/recipe_details_carbs">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Proteini"
+                android:textColor="@color/greenDark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="11g"
+                android:textColor="@color/greenDark"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:alpha="0.3"
+            android:background="@color/greenDark"
+            app:layout_constraintBottom_toBottomOf="@id/recipe_details_stats"
+            app:layout_constraintLeft_toRightOf="@id/recipe_details_proteins"
+            app:layout_constraintTop_toTopOf="@id/recipe_details_stats" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintLeft_toRightOf="@id/recipe_details_proteins">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Maščobe"
+                android:textColor="@color/greenDark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="15g"
+                android:textColor="@color/greenDark"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center|top"
-        android:text="The Awesome Sliding Up Panel"
-        android:textSize="16sp" />
+    <View
+        android:id="@+id/recipe_details_separator_horizontal_2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.3"
+        android:background="@color/greenDark"
+        app:layout_constraintLeft_toLeftOf="@+id/recipe_details_central_square"
+        app:layout_constraintRight_toRightOf="@id/recipe_details_central_square"
+        app:layout_constraintTop_toBottomOf="@id/recipe_details_stats" />
 
-</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+    <Button
+        android:id="@+id/recipe_details_cook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KUHAJ!"
+        android:textColor="@color/greenDark"
+        app:layout_constraintTop_toBottomOf="@id/recipe_details_separator_horizontal_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"/>
+
+</android.support.constraint.ConstraintLayout>
