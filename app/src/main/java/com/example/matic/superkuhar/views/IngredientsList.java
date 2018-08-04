@@ -1,4 +1,4 @@
-package com.example.matic.superkuhar;
+package com.example.matic.superkuhar.views;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-class IngredientsList extends LinearLayout{
+public class IngredientsList extends LinearLayout{
 
 
     public IngredientsList(Context context) {
@@ -26,10 +26,6 @@ class IngredientsList extends LinearLayout{
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    public void addIngredient(IngredientView ingredient) {
-        addView(ingredient, 0);
-    }
-
     public ArrayList<String> getIngredientsNames() {
         ArrayList<String> ingredientsNames = new ArrayList<>();
         for (int i = 0; i < getChildCount(); i++) {
@@ -37,5 +33,17 @@ class IngredientsList extends LinearLayout{
             ingredientsNames.add(ingredientView.getIngredientName());
         }
         return ingredientsNames;
+    }
+
+    public void fillWithIngredients(ArrayList<String> ingredients) {
+        for (String ingredient :
+                ingredients) {
+            IngredientView ingredientView = new IngredientView(getContext(), ingredient);
+            addIngredient(ingredientView);
+        }
+    }
+
+    public void addIngredient(IngredientView ingredient) {
+        addView(ingredient, 0);
     }
 }

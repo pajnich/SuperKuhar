@@ -1,4 +1,4 @@
-package com.example.matic.superkuhar;
+package com.example.matic.superkuhar.views;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 @SuppressLint("AppCompatCustomView")
-class IngredientView extends TextView{
+public class IngredientView extends TextView{
     public IngredientView(Context context) {
         super(context);
     }

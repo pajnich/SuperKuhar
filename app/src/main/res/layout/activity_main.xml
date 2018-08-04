@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFBE6"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_ingredients_search">
 
-        <com.example.matic.superkuhar.IngredientsList
+        <com.example.matic.superkuhar.views.IngredientsList
             android:id="@+id/main_ingredients_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

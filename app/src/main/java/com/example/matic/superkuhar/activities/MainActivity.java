@@ -1,17 +1,8 @@
-package com.example.matic.superkuhar;
+package com.example.matic.superkuhar.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,15 +10,24 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.matic.superkuhar.R;
+import com.example.matic.superkuhar.apis.RecipeApi;
+import com.example.matic.superkuhar.models.Recipe;
+import com.example.matic.superkuhar.views.IngredientView;
+import com.example.matic.superkuhar.views.IngredientsList;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+
 public class MainActivity extends Activity {
 
     private static final String[] COUNTRIES = new String[]{
-            "Belgium", "France", "Italy", "Germany", "Spain"
+            "Mleko", "Sir", "Vanilijin sladkor", "Jajca", "Moka", "Jabolka"
     };
     private AutoCompleteTextView ingredientsSearch;
     private IngredientsList ingredientsList;
     private ImageView arrowGoToRecipes;
-    private int numberOfRecipesFound;
+    private ArrayList<Recipe> recipes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
                 String ingredientName = textView.getText().toString();
                 IngredientView ingredient = new IngredientView(MainActivity.this, ingredientName);
                 ingredientsList.addIngredient(ingredient);
-                if ((numberOfRecipesFound = RecipeApi.searchForRecipes(ingredientsList.getIngredientsNames())) > 0) {
+                if ((recipes = RecipeApi.searchForRecipes(ingredientsList.getIngredientsNames())) != null) {
                     arrowGoToRecipes.setVisibility(View.VISIBLE);
                 }
                 ingredientsSearch.setText("");
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intentGoToRecipes = new Intent(MainActivity.this, RecipesActivity.class);
-                intentGoToRecipes.putExtra("numberOfRecipesFound", numberOfRecipesFound);
+                intentGoToRecipes.putExtra("numberOfRecipesFound", 3);
                 startActivity(intentGoToRecipes);
             }
         });

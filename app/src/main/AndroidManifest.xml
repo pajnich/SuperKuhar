@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecipesActivity" />
-        <activity android:name=".RecipeDetailsActivity" />
-        <activity android:name=".CookActivity" />
+        <activity android:name=".activities.RecipesActivity" />
+        <activity android:name=".activities.RecipeDetailsActivity" />
+        <activity android:name=".activities.CookActivity" />
     </application>
 
 </manifest>

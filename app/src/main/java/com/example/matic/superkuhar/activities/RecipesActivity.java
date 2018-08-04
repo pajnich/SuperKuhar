@@ -1,4 +1,4 @@
-package com.example.matic.superkuhar;
+package com.example.matic.superkuhar.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import com.example.matic.superkuhar.R;
+import com.example.matic.superkuhar.fragments.RecipeFragment;
+import com.example.matic.superkuhar.models.Recipe;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+
 public class RecipesActivity extends FragmentActivity {
 
-    private int numberOfRecipesFound;
+    private String recipesJSON;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,7 +30,7 @@ public class RecipesActivity extends FragmentActivity {
 
     private void processIntent() {
         Intent intentFromMainActivity = getIntent();
-        numberOfRecipesFound = intentFromMainActivity.getIntExtra("numberOfRecipesFound", 0);
+        recipesJSON = intentFromMainActivity.getStringExtra("recipes");
     }
 
     private void setupViewPager() {
@@ -44,7 +51,7 @@ public class RecipesActivity extends FragmentActivity {
 
         @Override
         public int getCount() {
-            return numberOfRecipesFound;
+            return 3;
         }
     }
 
