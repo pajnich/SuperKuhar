@@ -10,11 +10,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.example.matic.superkuhar.R;
-import com.example.matic.superkuhar.fragments.RecipeFragment;
-import com.example.matic.superkuhar.models.Recipe;
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
+import com.example.matic.superkuhar.fragments.RecipePreviewFragment;
 
 public class RecipesActivity extends FragmentActivity {
 
@@ -46,7 +42,21 @@ public class RecipesActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new RecipeFragment();
+            RecipePreviewFragment recipePreviewFragment = new RecipePreviewFragment();
+            Bundle args = new Bundle();
+            args.putInt("index", position);
+            recipePreviewFragment.setArguments(args);
+
+            switch (position) {
+                case 0:
+                    return recipePreviewFragment;
+                case 1:
+                    return recipePreviewFragment;
+                case 2:
+                    return recipePreviewFragment;
+                default:
+                    return recipePreviewFragment;
+            }
         }
 
         @Override
