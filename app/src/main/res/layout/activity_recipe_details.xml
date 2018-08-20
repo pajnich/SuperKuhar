@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Spinach Filo Puffs"
+        android:text="Skutne rezine z jabolki"
         android:textColor="#FD5523"
         android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,7 +63,7 @@
         android:layout_height="0dp"
         android:layout_margin="16dp"
         android:gravity="center"
-        android:text="Serve these little spinach puffs with a main course as your vegetable side and dinner roll in one, or eat a couple for a vegetarian dinner—they're that good."
+        android:text="Pecivo je res dobro in zelo sočno, zato smo prepričani, da se ne boste ustavili zgolj pri enem kosu. Še zlasti, če si ga boste privoščili s skodelico najljubšega toplega napitka."
         android:textColor="@color/greenDark"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -102,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="245"
+                android:text="484 kcal"
                 android:textColor="@color/greenDark"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -136,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="32g"
+                android:text="60g"
                 android:textColor="@color/greenDark"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -170,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="11g"
+                android:text="12g"
                 android:textColor="@color/greenDark"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -203,7 +203,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="15g"
+                android:text="19g"
                 android:textColor="@color/greenDark"
                 android:textStyle="bold" />
         </LinearLayout>
