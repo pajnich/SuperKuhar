@@ -12,28 +12,13 @@ import android.widget.TextView;
 
 @SuppressLint("AppCompatCustomView")
 public class IngredientView extends TextView{
-    public IngredientView(Context context) {
-        super(context);
-    }
 
-    public IngredientView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-    }
-
-    public IngredientView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-    public IngredientView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
-    public IngredientView(Context context, String ingredientName) {
+    public IngredientView(Context context, String ingredientName, int fontSize) {
         super(context);
         setText(ingredientName);
         setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100));
         setTextColor(Color.parseColor("#356859"));
-        setTextSize(24);
+        setTextSize(fontSize);
     }
 
     public String getIngredientName() {

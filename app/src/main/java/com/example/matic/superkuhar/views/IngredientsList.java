@@ -35,10 +35,10 @@ public class IngredientsList extends LinearLayout{
         return ingredientsNames;
     }
 
-    public void fillWithIngredients(ArrayList<String> ingredients) {
+    public void fillWithIngredients(ArrayList<String> ingredients, int fontSize) {
         for (String ingredient :
                 ingredients) {
-            IngredientView ingredientView = new IngredientView(getContext(), ingredient);
+            IngredientView ingredientView = new IngredientView(getContext(), ingredient, fontSize);
             addIngredient(ingredientView);
         }
     }

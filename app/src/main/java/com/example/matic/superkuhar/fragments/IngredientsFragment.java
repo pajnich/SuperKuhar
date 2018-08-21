@@ -11,6 +11,9 @@ import com.example.matic.superkuhar.models.Recipe;
 import com.example.matic.superkuhar.views.IngredientsList;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class IngredientsFragment extends Fragment {
 
     private ViewGroup rootView;
@@ -32,8 +35,28 @@ public class IngredientsFragment extends Fragment {
     private void fillIngredientsList() {
         Recipe recipe = getRecipeFromIntent();
         if(recipe != null){
-            ingredientsList.fillWithIngredients(recipe.getIngredients());
+            ingredientsList.fillWithIngredients(recipe.getIngredients(), 16);
         }
+
+        //TEST
+        ArrayList<String> mockIngredients = new ArrayList<>();
+        mockIngredients.add("500g pasirane skute (kremni sirček ali sirni namaz)");
+        mockIngredients.add("2 jajci");
+        mockIngredients.add("120g sladkorja v prahu");
+        mockIngredients.add("1 vrečka vanilijevega sladkorja");
+        mockIngredients.add("1 limona");
+        mockIngredients.add("4 manjša rdeča jabolka");
+        mockIngredients.add("");
+        mockIngredients.add("TESTO");
+        mockIngredients.add("240g gladke moke");
+        mockIngredients.add("1 ščepec soli");
+        mockIngredients.add("80g sladkorja v prahu");
+        mockIngredients.add("1 žlička pecilnega praška");
+        mockIngredients.add("1 vrečka vanilijevega sladkorja");
+        mockIngredients.add("160g hladnega, na kocke narezanega masla");
+        mockIngredients.add("1 jajce");
+        Collections.reverse(mockIngredients);
+        ingredientsList.fillWithIngredients(mockIngredients, 16);
     }
 
     private Recipe getRecipeFromIntent() {

@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView textView = (TextView) view;
                 String ingredientName = textView.getText().toString();
-                IngredientView ingredient = new IngredientView(MainActivity.this, ingredientName);
+                IngredientView ingredient = new IngredientView(MainActivity.this, ingredientName, 24);
                 ingredientsList.addIngredient(ingredient);
                 if ((recipes = RecipeApi.searchForRecipes(ingredientsList.getIngredientsNames())) != null) {
                     arrowGoToRecipes.setVisibility(View.VISIBLE);
