@@ -11,12 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 @SuppressLint("AppCompatCustomView")
-public class IngredientView extends TextView{
+public class IngredientView extends TextView {
 
     public IngredientView(Context context, String ingredientName, int fontSize) {
         super(context);
         setText(ingredientName);
-        setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 100));
+        setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         setTextColor(Color.parseColor("#356859"));
         setTextSize(fontSize);
     }

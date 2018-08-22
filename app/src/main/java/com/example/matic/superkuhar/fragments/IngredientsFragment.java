@@ -29,7 +29,7 @@ public class IngredientsFragment extends Fragment {
     }
 
     private void getViewReferences() {
-        ingredientsList = rootView.findViewById(R.id.main_ingredients_list);
+        ingredientsList = rootView.findViewById(R.id.ingredients_ingredients_list);
     }
 
     private void fillIngredientsList() {
